@@ -1,0 +1,92 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Projetos {% endblock %} 
+
+{% block sidebar %}{% endblock sidebar %}
+
+{% block content %}  
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Projetos</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/automacao">Automação</a></li>
+              <li class="breadcrumb-item active">Projetos</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Projetos</h3>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                <tr>
+                    <th style="width: 1%">#</th>
+                    <th style="width: 20%">Nome Projeto</th>
+                    <th style="width: 10%">Setor</th>
+                    <th style="width: 10%">Sistema</th>
+                    <th style="width: 20%">Progresso Carga</th>
+                    <th style="width: 8%" class="text-center">Status</th>
+                    <th style="width: 20%"></th>
+                </tr>
+                
+              </thead>
+              <tbody>
+                {% for id_projeto in ids_projeto %}
+                <tr id="row-{{ id_projeto }}">
+                    <td>#</td>
+                    <td class="col-name"><a href="./projeto/{{ id_projeto }}"><span class="var-name"></span></a><br /><small>Revisado em: <span class="var-rev"></span></small></td>
+                    <td class="col-sector"></td>
+                    <td class="col-system"></td>
+                    <td class="col-progress">
+                        <div class="progress progress_sm"><div class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;"></div></div>
+                        <small class="var-progress-bar-label"></small>
+                    </td>
+                    <td class="col-status"></td>
+                    <td class="col-actions text-right btn-group w-100" role="group" aria-label="Button group">
+                        <a class="btn btn-primary btn-sm flex-fill" href="./projeto/{{ id_projeto }}"><i class="fas fa-folder"></i> Abrir</a>
+                        <span><a class="btn btn-default btn-sm flex-fill" href="#" onclick="sendCommand('{{ id_projeto }}', 'start')"> <i class="fa fa-play"></i> Iniciar </a></span>
+                        <span><a class="btn btn-default btn-sm flex-fill" href="#" onclick="sendCommand('{{ id_projeto }}', 'pause')"> <i class="fa fa-pause"></i> Pausar </a></span>
+                        <span><a class="btn btn-default btn-sm flex-fill" href="#" onclick="sendCommand('{{ id_projeto }}', 'stop')"> <i class="fa fa-stop"></i> Parar </a></span>
+                    </td>
+                </tr>
+                {% endfor %}                  
+              </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+{% endblock content %}
+
+{% block javascripts %}
+<!-- sweetalert2 -->
+<script src="/static/assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Page Script -->
+<script src="/static/assets/js/pages/automacao/projetos.js"></script>
+<script>
+  loadPage();
+</script>
+{% endblock javascripts %}

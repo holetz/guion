@@ -1,0 +1,8 @@
+{
+    "name": "Example project",
+    "sector": "Example",
+    "system": "Example system",
+    "description": "Reference project: processes a synthetic load and demonstrates the queue, logs and operator input",
+    "rev_date": "2026-10-17",
+    "enabled": true
+}

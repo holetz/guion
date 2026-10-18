@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+*.ipynb
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Local database and logs
+*.db
+*.sqlite3
+*.log
+latest_logs/
+downloaded_files/
+
+# Automation runtime artifacts (may contain third-party data)
+projetos/*/socket_*
+projetos/*/arquivos/
+projetos/*/static/
+projetos/*/snapshots/
+projetos/*/cargas/
+projetos/*/*.log
+*.har
+cookies.json
+
+# Node / ferramentas
+node_modules/
+package-lock.json
+.playwright-mcp/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+.claude/settings.local.json

@@ -1,0 +1,16 @@
+.main-header .nav-link {
+	height: auto;
+}
+.navbar {
+	padding: 0;
+}
+.layout-boxed .wrapper {
+	margin: 0 auto;
+	max-width: 1250px;
+}
+.layout-boxed .content-wrapper{
+	z-index: auto !important;
+}
+.dropdown-menu-lg {
+	min-width: 180px;
+}

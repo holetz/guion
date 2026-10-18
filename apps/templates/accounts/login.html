@@ -1,0 +1,87 @@
+{% extends "layouts/base-fullscreen.html" %}
+
+{% block title %} Login {% endblock %} 
+
+<!-- Element injected in the BODY element -->
+{% block body_class %} login-page {% endblock body_class %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="/static/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="login-box">
+
+    <div class="login-logo">
+      <img src="/static/assets/img/logo.png" style="width: 80%;">
+    </div>
+
+    <div class="card">
+      <div class="card-body login-card-body">
+
+            <p class="login-box-msg">
+            {% if msg %}
+              <span class="text-success">{{ msg | safe }}</span>
+            {% else %}
+                Login
+            {% endif %}
+        </p>
+
+        <form method="post" action="">
+          {{ form.hidden_tag() }}
+          <div class="input-group mb-3">
+            {{ form.username(placeholder="Username", class="form-control") }}
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            {{ form.password(placeholder="Password", class="form-control", type="password") }}
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <a href="{{ url_for('authentication_blueprint.register') }}" class="text-center">Registrar</a>
+            </div>
+            <div class="col-4">
+              <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>
+            </div>
+          </div>
+        </form>
+
+        <br />
+
+        <div class="text-center">
+            <b class="text-lg">Oliveira & Antunes</b><br>
+            Advogados Associados
+            <br />
+            <br />
+            &copy; Guion Sistemas e Consultoria
+        </div>
+
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+
+
+
+{% endblock javascripts %}
