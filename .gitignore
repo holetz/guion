@@ -31,6 +31,9 @@ projetos/*/*.log
 *.har
 cookies.json
 
+# Documentation site build output
+site/
+
 # Node / ferramentas
 node_modules/
 package-lock.json

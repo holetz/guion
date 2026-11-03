@@ -16,3 +16,4 @@ The repo decides what reference exists — the skeleton ships none. Standalone p
 ## Pages
 
 * [configuration.md](configuration.md) — Environment variables read by the dashboard and the automations
+* [documentation-site.md](documentation-site.md) — Building the documentation site from /docs/ with zensical
