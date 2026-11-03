@@ -1,4 +1,5 @@
 {
+  "backend": "git",
   "shared": {
     "autonomy": {
       "runAloneUpTo": "low",
@@ -39,7 +40,8 @@
       "installed": [
         "specs",
         "knowledge",
-        "components"
+        "components",
+        "opensource"
       ]
     },
     "workHost": {
