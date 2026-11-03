@@ -5,7 +5,7 @@ description = "Web dashboard to orchestrate RPA automations (Flask + Selenium)"
 authors = [{ name = "Israel Holetz", email = "holetz@gmail.com" }]
 license = "MIT"
 readme = "README.md"
-requires-python = ">=3.10,<3.13"
+requires-python = ">=3.12,<3.14"
 dependencies = [
     # Web stack (Flask 3.1 line)
     "flask>=3.1.3",

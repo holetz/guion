@@ -20,18 +20,12 @@ charset-normalizer==3.5.2
     # via requests
 click==8.5.0
     # via flask
-dnspython==2.8.0 ; python_full_version < '3.11'
-    # via email-validator
-dnspython==2.9.1 ; python_full_version >= '3.11'
+dnspython==2.9.1
     # via email-validator
 email-validator==2.3.0
     # via guion
 et-xmlfile==2.0.0
     # via openpyxl
-exceptiongroup==1.3.1 ; python_full_version < '3.11'
-    # via
-    #   trio
-    #   trio-websocket
 flask==3.1.3
     # via
     #   flask-login
@@ -52,8 +46,6 @@ flask-sqlalchemy==3.1.1
     #   guion
 flask-wtf==1.3.0
     # via guion
-greenlet==3.5.6 ; (python_full_version < '3.11' and platform_machine == 'AMD64') or (python_full_version < '3.11' and platform_machine == 'WIN32') or (python_full_version < '3.11' and platform_machine == 'aarch64') or (python_full_version < '3.11' and platform_machine == 'amd64') or (python_full_version < '3.11' and platform_machine == 'ppc64le') or (python_full_version < '3.11' and platform_machine == 'win32') or (python_full_version < '3.11' and platform_machine == 'x86_64')
-    # via sqlalchemy
 gunicorn==26.2.0
     # via guion
 h11==0.16.0
@@ -86,11 +78,7 @@ markupsafe==3.0.4
     #   mako
     #   werkzeug
     #   wtforms
-numpy==2.2.6 ; python_full_version < '3.11'
-    # via pandas
-numpy==2.4.6 ; python_full_version == '3.11.*'
-    # via pandas
-numpy==2.5.4 ; python_full_version >= '3.12'
+numpy==2.5.4
     # via pandas
 openpyxl==3.1.5
     # via guion
@@ -104,15 +92,11 @@ ply==3.11
     # via lesscpy
 psycopg2-binary==2.9.13
     # via guion
-pycparser==3.11 ; python_full_version < '3.11' and implementation_name != 'PyPy' and implementation_name != 'pypy' and os_name == 'nt'
-    # via cffi
-pycparser==3.12 ; python_full_version >= '3.11' and implementation_name != 'PyPy' and implementation_name != 'pypy' and os_name == 'nt'
+pycparser==3.12 ; implementation_name != 'PyPy' and implementation_name != 'pypy' and os_name == 'nt'
     # via cffi
 pysocks==1.7.1
     # via urllib3
-python-dateutil==3.0.0 ; python_full_version < '3.11'
-    # via pandas
-python-dateutil==4.0.0 ; python_full_version >= '3.11'
+python-dateutil==4.0.0
     # via pandas
 python-dotenv==1.2.4
     # via guion
@@ -125,25 +109,16 @@ requests==2.34.2
 selenium==4.52.0
     # via guion
 six==1.17.0
-    # via
-    #   flask-minify
-    #   python-dateutil
+    # via flask-minify
 sniffio==1.3.1
     # via trio
 sortedcontainers==2.4.0
     # via trio
-sqlalchemy==2.0.55 ; python_full_version < '3.11'
+sqlalchemy==2.1.6
     # via
     #   alembic
     #   flask-sqlalchemy
     #   guion
-sqlalchemy==2.1.6 ; python_full_version >= '3.11'
-    # via
-    #   alembic
-    #   flask-sqlalchemy
-    #   guion
-tomli==2.5.0 ; python_full_version < '3.11'
-    # via alembic
 trio==0.35.0
     # via
     #   selenium
@@ -153,7 +128,6 @@ trio-websocket==0.12.2
 typing-extensions==4.16.0
     # via
     #   alembic
-    #   exceptiongroup
     #   selenium
     #   sqlalchemy
 tzdata==2026.6
@@ -174,11 +148,7 @@ werkzeug==3.1.9
     #   guion
 wsproto==1.3.2
     # via trio-websocket
-wtforms==3.2.2 ; python_full_version < '3.11'
-    # via
-    #   flask-wtf
-    #   guion
-wtforms==3.3.2 ; python_full_version >= '3.11'
+wtforms==3.3.2
     # via
     #   flask-wtf
     #   guion
