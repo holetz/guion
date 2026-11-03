@@ -1,3 +1,15 @@
 <!-- GENERATED FILE — do not edit; source: /docs/glossary.md -->
-<!-- source_sha256: 9adb8352c9737f9adedfd9dde568ec7c4cad2cbd6e238515606bb2bae774d670 -->
+<!-- source_sha256: a12264bd88b96ebd00eb0c4462d2057c2780a1f2ff5af392309c26e1d3e6eeec -->
 
+*[Carga]: A load: a spreadsheet (or a zip with a spreadsheet and arquivos/) uploaded through the dashboard that becomes a batch of records in a project's queue; recorded in the Cargas table.
+*[carga]: A load: a spreadsheet (or a zip with a spreadsheet and arquivos/) uploaded through the dashboard that becomes a batch of records in a project's queue; recorded in the Cargas table.
+*[Keychain]: The table holding each project's target-system credentials, read by the automation at runtime.
+*[keychain]: The table holding each project's target-system credentials, read by the automation at runtime.
+*[Projeto]: A project: one automation in projetos//, discovered by the dashboard through project.json and run as a child process.
+*[projeto]: A project: one automation in projetos//, discovered by the dashboard through project.json and run as a child process.
+*[Queue]: A project's table (class Queue, subclass of BaseQueue) with one record per item to process and its resultsstatus.
+*[queue]: A project's table (class Queue, subclass of BaseQueue) with one record per item to process and its resultsstatus.
+*[Socket]: A socket control file in the project folder through which dashboard and automation exchange commands, status and questions.
+*[socket]: A socket control file in the project folder through which dashboard and automation exchange commands, status and questions.
+*[Template]: A project's template. file, downloadable in the dashboard, defining the expected load layout.
+*[template]: A project's template. file, downloadable in the dashboard, defining the expected load layout.
