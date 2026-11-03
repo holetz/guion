@@ -22,6 +22,11 @@ try:
 except KeyError:
     exit('Error: Invalid <config_mode>. Expected values [Debug, Production] ')
 
+try:
+    app_config.validate()
+except RuntimeError as e:
+    exit('Error: {}'.format(e))
+
 app = create_app(app_config)
 Migrate(app, db)
 

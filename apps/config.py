@@ -3,10 +3,14 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-import os, random, string
+import logging
+import os
+import secrets
 
 from dotenv import load_dotenv
 load_dotenv()  # loads .env from project root by default
+
+logger = logging.getLogger(__name__)
 
 class Config(object):
 
@@ -15,10 +19,8 @@ class Config(object):
     # Assets Management
     ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')
 
-    # Set up the App SECRET_KEY
-    SECRET_KEY  = os.getenv('SECRET_KEY', None)
-    if not SECRET_KEY:
-        SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))    
+    # Set up the App SECRET_KEY; checked by validate() before the app starts
+    SECRET_KEY  = os.getenv('SECRET_KEY') or None
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -59,8 +61,22 @@ class Config(object):
         # This will create a file in <app> FOLDER
         SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3') 
     
+    @classmethod
+    def validate(cls):
+        """Check the configuration before the app starts."""
+
+
 class ProductionConfig(Config):
     DEBUG = False
+
+    @classmethod
+    def validate(cls):
+        if not cls.SECRET_KEY:
+            raise RuntimeError(
+                'SECRET_KEY is not set. Production needs a fixed secret key: set SECRET_KEY '
+                'in .env (see .env.example), e.g. with '
+                '`python -c "import secrets; print(secrets.token_hex(32))"`.'
+            )
 
     # Security
     SESSION_COOKIE_HTTPONLY = True
@@ -70,6 +86,13 @@ class ProductionConfig(Config):
 
 class DebugConfig(Config):
     DEBUG = True
+
+    @classmethod
+    def validate(cls):
+        if not cls.SECRET_KEY:
+            cls.SECRET_KEY = secrets.token_hex(32)
+            logger.warning('SECRET_KEY is not set; using a random key for this process '
+                           '(sessions end on restart). Set SECRET_KEY in .env.')
 
 
 # Load all possible configurations
