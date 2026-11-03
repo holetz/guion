@@ -36,3 +36,6 @@ dev = [
     "pytest>=8.3",
     "zensical>=0.0.1",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
