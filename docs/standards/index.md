@@ -11,7 +11,7 @@ home.
 Keep only the subtopics that apply to the repo; within each, break standards **one
 concept per file** by considering the candidate sub-standards catalog (a
 **consideration** checklist, evidence-gated generation, recorded deferral — not a blind
-generate list). The **agent-facing pointer** for this home is [CLAUDE.md](CLAUDE.md)
+generate list). The **agent-facing pointer** for this home is [AGENTS.md](AGENTS.md)
 (auto-loaded).
 
 ## Subtopics
@@ -21,7 +21,7 @@ generate list). The **agent-facing pointer** for this home is [CLAUDE.md](CLAUDE
 
 ## Current docs
 
-<!-- BEGIN GENERATED: rebuilt from disk by `quenching-align:knowledge:align`/`quenching-align:knowledge:add` — DO NOT edit by hand.
+<!-- BEGIN GENERATED: rebuilt from disk by `quenching-knowledge-align`/`quenching-knowledge-add` — DO NOT edit by hand.
      Scans standards/**/*.md, reads title/description/timestamp/type, grouped by subject subfolder.
      Row model per subfolder:
        ### code/

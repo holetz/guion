@@ -2,7 +2,7 @@
 type: standard
 title: Artifact language
 description: Every durable artifact of this repository — doc bodies, README and community files, code comments, commit messages, PR bodies — is written in English, whatever language the conversation uses
-resource: "/docs/**, CLAUDE.md, README.md, CONTRIBUTING.md, SECURITY.md, .env.example, .gitignore"
+resource: "/docs/**, AGENTS.md, README.md, CONTRIBUTING.md, SECURITY.md, .env.example, .gitignore"
 tags: [agents, language, open-source]
 timestamp: 2026-10-17
 audience: both

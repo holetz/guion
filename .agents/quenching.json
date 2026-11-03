@@ -1,0 +1,71 @@
+{
+  "backend": "git",
+  "shared": {
+    "autonomy": {
+      "runAloneUpTo": "low",
+      "merge": "policy",
+      "maxWorkers": 3,
+      "maxLaunches": 40,
+      "livenessMinutes": 20
+    },
+    "codex": {
+      "crossReview": "auto",
+      "maxUsedPercent": {
+        "primary": 80,
+        "secondary": 90
+      },
+      "timeoutSeconds": 900,
+      "model": "gpt-6-astra",
+      "executor": {
+        "enabled": true,
+        "modelSmall": "gpt-6.1-sol",
+        "modelVerified": "gpt-6.1-sol",
+        "modelSmallTier": "gpt-6-luna",
+        "reasoningEffort": "medium",
+        "maxTaskTokens": 20000,
+        "reservePercent": 10,
+        "stopLossPercent": 15
+      }
+    },
+    "contextBudgets": {
+      "main": 200000,
+      "worker": 100000,
+      "conductor": 150000
+    },
+    "okfValidate": {
+      "warnAsError": false,
+      "ignoreGlobs": []
+    },
+    "profiles": {
+      "installed": [
+        "specs",
+        "knowledge",
+        "components",
+        "opensource"
+      ]
+    },
+    "workHost": {
+      "remoteRoot": "~/work",
+      "syncFlags": [
+        "-az",
+        "--checksum"
+      ],
+      "syncExclude": [
+        ".git",
+        "node_modules",
+        ".venv",
+        "target"
+      ],
+      "pullBack": [],
+      "protectedPaths": [],
+      "minFreeGb": 10
+    }
+  },
+  "specs": {
+    "chat": {
+      "model": "sonnet",
+      "budgetUsd": 0.5,
+      "timeoutSeconds": 300.0
+    }
+  }
+}
