@@ -1,3 +1,4 @@
+import logging
 import os
 from pathlib import Path
 
@@ -5,10 +6,12 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from importlib import import_module
+from sqlalchemy import create_engine
 
 
 db = SQLAlchemy()
 login_manager = LoginManager()
+logger = logging.getLogger(__name__)
 
 
 def register_extensions(app):
@@ -29,24 +32,32 @@ def register_projetos():
 def refresh_database(app):
     register_projetos()
     db.create_all()
-    
+
+
+def select_database(app):
+    """Fall back to SQLite when the configured DBMS cannot be reached.
+
+    Runs before the extension binds its engine, so the fallback URI is the one used.
+    """
+    uri = app.config['SQLALCHEMY_DATABASE_URI']
+    if uri.startswith('sqlite'):
+        return
+    try:
+        engine = create_engine(uri)
+        with engine.connect():
+            pass
+        engine.dispose()
+    except Exception as e:
+        logger.error('DBMS exception: %s', e)
+        basedir = os.path.abspath(os.path.dirname(__file__))
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
+        logger.warning('Falling back to SQLite')
+
+
 def configure_database(app):
     register_projetos()
-    
-    @app.before_first_request
-    def initialize_database():
-        try:
-            db.create_all()
-        except Exception as e:
-
-            print('> Error: DBMS Exception: ' + str(e) )
-
-            # fallback to SQLite
-            basedir = os.path.abspath(os.path.dirname(__file__))
-            app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
-
-            print('> Fallback to SQLite ')
-            db.create_all()
+    with app.app_context():
+        db.create_all()
 
     @app.teardown_request
     def shutdown_session(exception=None):
@@ -55,6 +66,7 @@ def configure_database(app):
 def create_app(config):
     app = Flask(__name__)
     app.config.from_object(config)
+    select_database(app)
     register_extensions(app)
     register_blueprints(app)
     configure_database(app)
