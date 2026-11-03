@@ -33,7 +33,6 @@ class Config(object):
 
     USE_SQLITE  = True 
 
-    print(DB_ENGINE, DB_NAME, DB_USERNAME)
     # try to set up a Relational DBMS
     if DB_ENGINE and DB_NAME and DB_USERNAME:
 
@@ -53,8 +52,8 @@ class Config(object):
 
         except Exception as e:
 
-            print('> Error: DBMS Exception: ' + str(e) )
-            print('> Fallback to SQLite ')    
+            logger.error('DBMS exception: %s', e)
+            logger.warning('Falling back to SQLite')
 
     if USE_SQLITE:
 
