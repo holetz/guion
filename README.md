@@ -25,7 +25,7 @@ Built with Flask, SQLAlchemy, Selenium and the AdminLTE dashboard template.
 ## Quick start
 
 ```bash
-cp .env.example .env      # set SECRET_KEY and the DB_* variables
+cp .env.example .env      # set SECRET_KEY (required unless DEBUG=True) and the DB_* variables
 uv sync
 uv run flask run
 ```
