@@ -2,6 +2,8 @@
 
 Web dashboard (Flask + SQLAlchemy + Selenium) that runs and supervises RPA automation projects.
 
+Language: pt-BR
+
 ## Operating this repo
 
 ```bash

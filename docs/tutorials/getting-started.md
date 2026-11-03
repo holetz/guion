@@ -15,7 +15,7 @@ maintainer: Israel Holetz
 
 ## Prerequisites
 
-- Python 3.10 and [uv](https://docs.astral.sh/uv/) (or `nix develop`, which provides uv,
+- Python 3.12 and [uv](https://docs.astral.sh/uv/) (or `nix develop`, which provides uv,
   Chromium and chromedriver — `flake.nix`)
 - PostgreSQL: automation queries use the `public` schema, so the full flow needs Postgres.
   Without `DB_*` the dashboard falls back to SQLite, which is only good for browsing the UI.

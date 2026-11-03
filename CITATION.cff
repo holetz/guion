@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use guion, please cite it using the metadata below."
+title: guion
+abstract: "Web dashboard (Flask + SQLAlchemy + Selenium) that runs and supervises RPA automation projects."
+type: software
+authors:
+  - family-names: Holetz
+    given-names: Israel
+    email: holetz@gmail.com
+license: MIT
+repository-code: "https://github.com/holetz/guion"
+url: "https://github.com/holetz/guion"
+version: 0.1.0

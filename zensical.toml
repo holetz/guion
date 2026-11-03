@@ -1,0 +1,7 @@
+[project]
+site_name = "guion"
+site_description = "Web dashboard to orchestrate RPA automations (Flask + Selenium)"
+site_url = "https://holetz.github.io/guion/"
+repo_url = "https://github.com/holetz/guion"
+docs_dir = "docs"
+site_dir = "site"
